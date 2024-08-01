@@ -1,3 +1,13 @@
+# Answers
+This is my repository of ziglins answers, this is a good place if your lost
+or do not know how to complete a specific ziglins challenge
+
+this is also a repo for me to keep track of how mutch ziglins answers i have done to learn the language in full,
+this should not take me that long as i already have built up knowlege or low level / systems level programming, with rust, c, and haskell 
+
+if you have any specific question you think i could have done better you might aswell make a pull request and i will look over it and see if it works well with their examples.
+
+
 # Ziglings
 
 Welcome to Ziglings! This project contains a series of tiny
@@ -85,151 +95,3 @@ Once you have a build of the Zig compiler that works with
 Ziglings, they'll continue to work together. But keep in mind
 that if you update one, you may need to also update the other.
 
-
-### Version Changes
-
-Version-0.13.0-dev.339
-* *2024-05-29* zig 0.13.0-dev.339 - rework std.Progress - see [#20059](https://github.com/ziglang/zig/pull/20059)
-* *2024-03-21* zig 0.12.0-dev.3518 - change to @fieldParentPtr - see [#19470](https://github.com/ziglang/zig/pull/19470)
-* *2024-03-21* zig 0.12.0-dev.3397 - rename std.os to std.posix - see [#5019](https://github.com/ziglang/zig/issues/5019)
-* *2024-03-14* zig 0.12.0-dev.3302 - changes in `std.fmt` - floating-point formatting implementation - see [#19229](https://github.com/ziglang/zig/pull/19229)
-* *2024-02-05* zig 0.12.0-dev.2618 - changes in `build system` - from `Step.zig_exe` to `Step.graph.zig_exe` - see [#18778](https://github.com/ziglang/zig/issues/18778)
-* *2024-01-05* zig 0.12.0-dev.2043 - rename of `std.Build.FileSource` to `std.Build.LazyPath` - see [#16353](https://github.com/ziglang/zig/issues/16353)
-* *2023-10-24* zig 0.12.0-dev.1243 - changes in `std.ChildProcess`: renamed exec to run - see [#5853](https://github.com/ziglang/zig/issues/5853)
-* *2023-06-26* zig 0.11.0-dev.4246 - changes in compile step (now it can be null)
-* *2023-06-26* zig 0.11.0-dev.3853 - removal of destination type from all cast builtins
-* *2023-06-20* zig 0.11.0-dev.3747 - `@enumToInt` is now `@intFromEnum` and `@intToFloat` is now `@floatFromInt`
-* *2023-05-25* zig 0.11.0-dev.3295 - `std.debug.TTY` is now `std.io.tty`
-* *2023-04-30* zig 0.11.0-dev.2704 - use of the new `std.Build.ExecutableOptions.link_libc` field
-* *2023-04-12* zig 0.11.0-dev.2560 - changes in `std.Build` - remove run() and install()
-* *2023-04-07* zig 0.11.0-dev.2401 - fixes of the new build system - see [#212](https://github.com/ratfactor/ziglings/pull/212)
-* *2023-02-21* zig 0.11.0-dev.2157 - changes in `build system` - new: parallel processing of the build steps
-* *2023-02-21* zig 0.11.0-dev.1711 - changes in `for loops` - new: Multi-Object For-Loops + Struct-of-Arrays
-* *2023-02-12* zig 0.11.0-dev.1638 - changes in `std.Build` cache_root now returns a directory struct
-* *2023-02-04* zig 0.11.0-dev.1568 - changes in `std.Build` (combine `std.build` and `std.build.Builder` into `std.Build`)
-* *2023-01-14* zig 0.11.0-dev.1302 - changes in `@addWithOverflow` (now returns a tuple) and `@typeInfo`; temporary disabled async functionality
-* *2022-09-09* zig 0.10.0-dev.3978 - change in `NativeTargetInfo.detect` in build
-* *2022-09-06* zig 0.10.0-dev.3880 - Ex 074 correctly fails again: comptime array len
-* *2022-08-29* zig 0.10.0-dev.3685 - `@typeName()` output change, stage1 req. for async
-* *2022-07-31* zig 0.10.0-dev.3385 - std lib string `fmt()` option changes
-* *2022-03-19* zig 0.10.0-dev.1427 - method for getting sentinel of type changed
-* *2021-12-20* zig 0.9.0-dev.2025 - `c_void` is now `anyopaque`
-* *2021-06-14* zig 0.9.0-dev.137  - std.build.Id `.Custom` is now `.custom`
-* *2021-04-21* zig 0.8.0-dev.1983 - std.fmt.format() `any` format string required
-* *2021-02-12* zig 0.8.0-dev.1065 - std.fmt.format() `s` (string) format string required
-
-## Advanced Usage
-
-It can be handy to check just a single exercise:
-
-```
-zig build -Dn=19
-```
-
-You can also run without checking for correctness:
-
-```
-zig build -Dn=19 test
-```
-
-Or skip the build system entirely and interact directly with the
-compiler if you're into that sort of thing:
-
-```
-zig run exercises/001_hello.zig
-```
-
-Calling all wizards: To prepare an executable for debugging,
-install it to zig-cache/bin with:
-
-```
-zig build -Dn=19 install
-```
-
-To get a list of all possible options, run:
-
-```
-zig build -Dn=19 -l
-
-  install          Install 019_functions2.zig to prefix path
-  uninstall        Uninstall 019_functions2.zig from prefix path
-  test             Run 019_functions2.zig without checking output
-  ...
-```
-
-## What's Covered
-
-The primary goal for Ziglings is to cover the core Zig language.
-
-It would be nice to cover the Standard Library as well, but this
-is currently challenging because the stdlib is evolving even
-faster than the core language (and that's saying something!).
-Not only would stdlib coverage change very rapidly, some
-exercises might even cease to be relevant entirely.
-
-Having said that, there are some stdlib features that are
-probably here to stay or are so important to understand that they
-are worth the extra effort to keep current.
-
-Conspicuously absent from Ziglings are a lot of string
-manipulation exercises. This is because Zig itself largely avoids
-dealing with strings. Hopefully there will be an obvious way to
-address this in the future. The Ziglings crew loves strings!
-
-Zig Core Language
-
-* [x] Hello world (main needs to be public)
-* [x] Importing standard library
-* [x] Assignment
-* [x] Arrays
-* [x] Strings
-* [x] If
-* [x] While
-* [x] For
-* [x] Functions
-* [x] Errors (error/try/catch/if-else-err)
-* [x] Defer (and errdefer)
-* [x] Switch
-* [x] Unreachable
-* [x] Enums
-* [x] Structs
-* [x] Pointers
-* [x] Optionals
-* [x] Struct methods
-* [x] Slices
-* [x] Many-item pointers
-* [x] Unions
-* [x] Numeric types (integers, floats)
-* [x] Labelled blocks and loops
-* [x] Loops as expressions
-* [x] Builtins
-* [x] Inline loops
-* [x] Comptime
-* [x] Sentinel termination
-* [x] Quoted identifiers @""
-* [x] Anonymous structs/tuples/lists
-* [ ] Async <--- ironically awaiting upstream Zig updates
-* [X] Interfaces
-* [X] Bit manipulation
-* [X] Working with C
-* [X] Threading
-
-Zig Standard Library
-
-* [X] String formatting
-* [X] Testing
-* [X] Tokenization
-* [X] File handling
-
-## Contributing
-
-Contributions are very welcome! I'm writing this to teach myself
-and to create the learning resource I wished for. There will be
-tons of room for improvement:
-
-* Wording of explanations
-* Idiomatic usage of Zig
-* Additional exercises
-
-Please see [CONTRIBUTING](https://codeberg.org/ziglings/exercises/src/branch/main/CONTRIBUTING.md)
-in this repo for the full details.
